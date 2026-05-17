@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-17T22:31:05.835Z",
+  "updatedAt": "2026-05-17T22:36:40.614Z",
   "checkoutUrl": "https://pay.hotmart.com/N105747626N",
   "strategy": "ui",
   "totalCountries": 12,
@@ -92,31 +92,31 @@
   "errors": [
     {
       "country": "BR",
-      "reason": "countryItem.isVisible is not a function"
+      "reason": "Preço não encontrado com nenhuma estratégia"
     },
     {
       "country": "MX",
-      "reason": "countryItem.isVisible is not a function"
+      "reason": "Preço não encontrado com nenhuma estratégia"
     },
     {
       "country": "CR",
-      "reason": "countryItem.isVisible is not a function"
+      "reason": "Preço não encontrado com nenhuma estratégia"
     },
     {
       "country": "SV",
-      "reason": "countryItem.isVisible is not a function"
+      "reason": "Preço não encontrado com nenhuma estratégia"
     },
     {
       "country": "GT",
-      "reason": "countryItem.isVisible is not a function"
+      "reason": "Preço não encontrado com nenhuma estratégia"
     },
     {
       "country": "HN",
-      "reason": "countryItem.isVisible is not a function"
+      "reason": "Preço não encontrado com nenhuma estratégia"
     },
     {
       "country": "PY",
-      "reason": "countryItem.isVisible is not a function"
+      "reason": "Preço não encontrado com nenhuma estratégia"
     },
     {
       "country": "UY",
