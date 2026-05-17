@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-05-17T23:30:57.187Z",
+  "updatedAt": "2026-05-17T23:49:26.377Z",
   "checkoutUrl": "https://pay.hotmart.com/N105747626N",
   "strategy": "both",
-  "totalCountries": 13,
+  "totalCountries": 17,
   "prices": {
     "BR": {
       "currency": "BRL",
@@ -32,6 +32,13 @@
       "locale": "es_AR",
       "name": "Argentina"
     },
+    "PE": {
+      "currency": "PEN",
+      "amount": 37,
+      "formatted": "S/ 37.00",
+      "locale": "es_PE",
+      "name": "Perú"
+    },
     "ES": {
       "currency": "EUR",
       "amount": 10.4,
@@ -53,6 +60,13 @@
       "locale": "es_EC",
       "name": "Ecuador"
     },
+    "BO": {
+      "currency": "BOB",
+      "amount": 74,
+      "formatted": "Bs 74,00",
+      "locale": "es_BO",
+      "name": "Bolivia"
+    },
     "CR": {
       "currency": "CRC",
       "amount": 4790,
@@ -66,6 +80,20 @@
       "formatted": "$9.99",
       "locale": "es_SV",
       "name": "El Salvador"
+    },
+    "PA": {
+      "currency": "PAB",
+      "amount": 0.12,
+      "formatted": "B/. 12.00",
+      "locale": "es_PA",
+      "name": "Panamá"
+    },
+    "PY": {
+      "currency": "PYG",
+      "amount": 64354,
+      "formatted": "Gs. 64.354",
+      "locale": "es_PY",
+      "name": "Paraguay"
     },
     "PR": {
       "currency": "USD",
@@ -98,14 +126,6 @@
   },
   "errors": [
     {
-      "country": "PE",
-      "reason": "Preço não encontrado com nenhuma estratégia"
-    },
-    {
-      "country": "BO",
-      "reason": "Preço não encontrado com nenhuma estratégia"
-    },
-    {
       "country": "DO",
       "reason": "Preço não encontrado com nenhuma estratégia"
     },
@@ -115,14 +135,6 @@
     },
     {
       "country": "HN",
-      "reason": "Preço não encontrado com nenhuma estratégia"
-    },
-    {
-      "country": "PA",
-      "reason": "Preço não encontrado com nenhuma estratégia"
-    },
-    {
-      "country": "PY",
       "reason": "Preço não encontrado com nenhuma estratégia"
     }
   ]
