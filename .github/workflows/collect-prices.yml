@@ -57,7 +57,7 @@ jobs:
           # Estratégia: "url" (só parâmetro locale) | "ui" (só clique) | "both" (padrão)
           STRATEGY:   'both'
           TIMEOUT_MS: '25000'
-          DEBUG:      'false'
+          DEBUG:      'true'
 
       # 6. Salva screenshots como artefato (disponíveis por 7 dias no GitHub)
       #    Útil para depurar quando um país não foi coletado corretamente.
