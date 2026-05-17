@@ -207,21 +207,56 @@ async function extractPrice(page) {
 
 /**
  * Extrai valor numérico de uma string de preço.
- * Suporta: "R$ 51,99" | "$200.99" | "MXN 200" | "51.990" (CLP) | "S/ 10,99"
+ *
+ * Formatos suportados:
+ *   "9.99"      → 9.99   (US: ponto decimal, sem milhar)
+ *   "51,99"     → 51.99  (BR/EU: vírgula decimal)
+ *   "1,234.56"  → 1234.56 (US com milhar)
+ *   "1.234,56"  → 1234.56 (BR/EU com milhar)
+ *   "51.990"    → 51990  (CLP/COP: ponto como milhar, sem decimal)
+ *   "51,990"    → 51990  (idem com vírgula)
  */
 function parsePrice(raw) {
   if (!raw) return null;
-  const text    = raw.trim();
+  const text     = raw.trim();
   const noSymbol = text.replace(/[^0-9,\.]/g, '');
-  if (!noSymbol || noSymbol.length < 1) return null;
+  if (!noSymbol) return null;
 
+  const hasDot   = noSymbol.includes('.');
+  const hasComma = noSymbol.includes(',');
   let amount;
-  if (/[,\.]\d{2}$/.test(noSymbol)) {
-    // Tem centavos: "51,99" | "1.234,56"
-    amount = parseFloat(noSymbol.replace(/\./g, '').replace(',', '.'));
+
+  if (hasDot && hasComma) {
+    // Dois separadores: o último é o decimal
+    const lastDot   = noSymbol.lastIndexOf('.');
+    const lastComma = noSymbol.lastIndexOf(',');
+    if (lastComma > lastDot) {
+      // "1.234,56" → vírgula é decimal (formato BR/EU)
+      amount = parseFloat(noSymbol.replace(/\./g, '').replace(',', '.'));
+    } else {
+      // "1,234.56" → ponto é decimal (formato US)
+      amount = parseFloat(noSymbol.replace(/,/g, ''));
+    }
+  } else if (hasComma) {
+    const afterComma = noSymbol.slice(noSymbol.lastIndexOf(',') + 1);
+    if (afterComma.length === 2) {
+      // "51,99" → vírgula é decimal
+      amount = parseFloat(noSymbol.replace(',', '.'));
+    } else {
+      // "51,990" → vírgula é milhar (CLP/COP sem centavos)
+      amount = parseFloat(noSymbol.replace(/,/g, ''));
+    }
+  } else if (hasDot) {
+    const afterDot = noSymbol.slice(noSymbol.lastIndexOf('.') + 1);
+    if (afterDot.length === 2) {
+      // "9.99" → ponto é decimal (formato US)
+      amount = parseFloat(noSymbol);
+    } else {
+      // "51.990" → ponto é milhar (CLP/COP sem centavos)
+      amount = parseFloat(noSymbol.replace(/\./g, ''));
+    }
   } else {
-    // Sem centavos (CLP, COP, PYG): "51.990" | "51,990"
-    amount = parseFloat(noSymbol.replace(/[,\.]/g, ''));
+    amount = parseFloat(noSymbol);
   }
 
   if (isNaN(amount) || amount <= 0) return null;
@@ -241,13 +276,23 @@ async function tryUrlStrategy(page, country) {
   try {
     await page.goto(url, { waitUntil: 'domcontentloaded', timeout: TIMEOUT_MS });
     await page.waitForLoadState('networkidle', { timeout: TIMEOUT_MS }).catch(() => {});
-    await sleep(2000); // espera hydration do React
+    await sleep(2000);
 
     const price = await extractPrice(page);
-    if (price) {
-      log('✓', `[URL] ${price.raw}`);
-      return price;
+    if (!price) return null;
+
+    // Valida: se o país usa moeda diferente de USD mas o preço está em formato
+    // USD (símbolo $ sem indicação de moeda local), o locale param não funcionou.
+    // Nesse caso descarta e deixa a estratégia UI tentar.
+    const expectsNonUSD = country.currency !== 'USD';
+    const looksLikeUSD  = /^\$[\d,\.]+$/.test(price.raw.trim());
+    if (expectsNonUSD && looksLikeUSD) {
+      warn(`[URL] Retornou preço em USD ($${price.amount}) para ${country.code} (esperado: ${country.currency}). Locale param ignorado pela Hotmart → tentando UI.`);
+      return null;
     }
+
+    log('✓', `[URL] ${price.raw}`);
+    return price;
   } catch (err) {
     warn(`URL strategy falhou: ${err.message}`);
   }
