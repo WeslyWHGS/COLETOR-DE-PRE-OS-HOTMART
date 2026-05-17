@@ -42,7 +42,7 @@ jobs:
           COUNTRY_BTN_SELECTOR: ${{ secrets.COUNTRY_BTN_SELECTOR }}
           STRATEGY: 'ui'
           TIMEOUT_MS: '25000'
-          DEBUG: 'True'
+          DEBUG: 'true'
 
       - name: Salvar screenshots
         if: always()
