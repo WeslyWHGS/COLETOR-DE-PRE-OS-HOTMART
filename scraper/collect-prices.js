@@ -149,7 +149,9 @@ function sleep(ms) {
 
 async function dismissCookieBanner(page) {
   try {
-    const btn = await page.$('button:has-text("Permitir todas"), button:has-text("Permitir todo")');
+    const btn = await page.$(
+      'button:has-text("Permitir todas"), button:has-text("Permitir todo"), button:has-text("Accept all")'
+    );
     if (btn && await btn.isVisible().catch(() => false)) {
       await btn.click({ timeout: 3000 });
       await sleep(500);
