@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-05-18T00:22:34.701Z",
+  "updatedAt": "2026-05-18T00:56:21.091Z",
   "checkoutUrl": "https://pay.hotmart.com/N105747626N",
   "strategy": "both",
-  "totalCountries": 19,
+  "totalCountries": 20,
   "prices": {
     "BR": {
       "currency": "BRL",
@@ -74,6 +74,13 @@
       "locale": "es_CR",
       "name": "Costa Rica"
     },
+    "DO": {
+      "currency": "USD",
+      "amount": 9.99,
+      "formatted": "$9.99",
+      "locale": "es_DO",
+      "name": "Rep. Dominicana"
+    },
     "SV": {
       "currency": "USD",
       "amount": 9.99,
@@ -137,11 +144,5 @@
       "locale": "pt_PT",
       "name": "Portugal"
     }
-  },
-  "errors": [
-    {
-      "country": "DO",
-      "reason": "Preço não encontrado com nenhuma estratégia"
-    }
-  ]
+  }
 }
