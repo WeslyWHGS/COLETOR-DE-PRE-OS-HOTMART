@@ -1,146 +1,146 @@
 {
-  "updatedAt": "2026-05-30T23:08:29.690Z",
+  "updatedAt": "2026-05-30T23:39:55.147Z",
   "checkoutUrl": "https://pay.hotmart.com/R105871853K",
   "strategy": "both",
   "totalCountries": 20,
   "prices": {
     "BR": {
       "currency": "BRL",
-      "amount": 55.35,
-      "formatted": "R$ 55,35",
+      "amount": 66.5,
+      "formatted": "R$ 66,50",
       "locale": "pt_BR",
       "name": "Brasil"
     },
     "MX": {
       "currency": "MXN",
-      "amount": 213.44,
-      "formatted": "$213.44",
+      "amount": 255.2,
+      "formatted": "$255.20",
       "locale": "es_MX",
       "name": "México"
     },
     "CO": {
       "currency": "COP",
-      "amount": 38924,
-      "formatted": "$ 38.924",
+      "amount": 46757,
+      "formatted": "$ 46.757",
       "locale": "es_CO",
       "name": "Colombia"
     },
     "AR": {
       "currency": "ARS",
-      "amount": 16214,
-      "formatted": "$ 16.214,00",
+      "amount": 19475,
+      "formatted": "$ 19.475,00",
       "locale": "es_AR",
       "name": "Argentina"
     },
     "PE": {
       "currency": "PEN",
-      "amount": 37,
-      "formatted": "S/ 37.00",
+      "amount": 44,
+      "formatted": "S/ 44.00",
       "locale": "es_PE",
       "name": "Perú"
     },
     "ES": {
       "currency": "EUR",
-      "amount": 10.4,
-      "formatted": "10,40 €",
+      "amount": 12.48,
+      "formatted": "12,48 €",
       "locale": "es_ES",
       "name": "España"
     },
     "CL": {
       "currency": "CLP",
-      "amount": 11165,
-      "formatted": "$11.165",
+      "amount": 13410,
+      "formatted": "$13.410",
       "locale": "es_CL",
       "name": "Chile"
     },
     "EC": {
       "currency": "USD",
-      "amount": 9.99,
-      "formatted": "$9.99",
+      "amount": 12,
+      "formatted": "$12.00",
       "locale": "es_EC",
       "name": "Ecuador"
     },
     "BO": {
       "currency": "BOB",
-      "amount": 74,
-      "formatted": "Bs 74,00",
+      "amount": 89,
+      "formatted": "Bs 89,00",
       "locale": "es_BO",
       "name": "Bolivia"
     },
     "CR": {
       "currency": "CRC",
-      "amount": 4765,
-      "formatted": "₡4 765,00",
+      "amount": 5724,
+      "formatted": "₡5 724,00",
       "locale": "es_CR",
       "name": "Costa Rica"
     },
     "DO": {
       "currency": "USD",
-      "amount": 9.99,
-      "formatted": "$9.99",
+      "amount": 12,
+      "formatted": "$12.00",
       "locale": "es_DO",
       "name": "Rep. Dominicana"
     },
     "SV": {
       "currency": "USD",
-      "amount": 9.99,
-      "formatted": "$9.99",
+      "amount": 12,
+      "formatted": "$12.00",
       "locale": "es_SV",
       "name": "El Salvador"
     },
     "GT": {
       "currency": "GTQ",
-      "amount": 82,
-      "formatted": "Q 82.00",
+      "amount": 97,
+      "formatted": "Q 97.00",
       "locale": "es_GT",
       "name": "Guatemala"
     },
     "HN": {
       "currency": "HNL",
-      "amount": 282,
-      "formatted": "L 282.00",
+      "amount": 337,
+      "formatted": "L 337.00",
       "locale": "es_HN",
       "name": "Honduras"
     },
     "PA": {
       "currency": "PAB",
-      "amount": 12,
-      "formatted": "B/. 12.00",
+      "amount": 14,
+      "formatted": "B/. 14.00",
       "locale": "es_PA",
       "name": "Panamá"
     },
     "PY": {
       "currency": "PYG",
-      "amount": 63419,
-      "formatted": "Gs. 63.419",
+      "amount": 76177,
+      "formatted": "Gs. 76.177",
       "locale": "es_PY",
       "name": "Paraguay"
     },
     "PR": {
       "currency": "USD",
-      "amount": 9.99,
-      "formatted": "$9.99",
+      "amount": 12,
+      "formatted": "$12.00",
       "locale": "es_PR",
       "name": "Puerto Rico"
     },
     "UY": {
       "currency": "UYU",
-      "amount": 424,
-      "formatted": "$ 424,00",
+      "amount": 509,
+      "formatted": "$ 509,00",
       "locale": "es_UY",
       "name": "Uruguay"
     },
     "VE": {
       "currency": "USD",
-      "amount": 9.99,
-      "formatted": "$9.99",
+      "amount": 12,
+      "formatted": "$12.00",
       "locale": "es_VE",
       "name": "Venezuela"
     },
     "PT": {
       "currency": "EUR",
-      "amount": 10.6,
-      "formatted": "10,60 €",
+      "amount": 12.72,
+      "formatted": "12,72 €",
       "locale": "pt_PT",
       "name": "Portugal"
     }
