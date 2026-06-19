@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-18T18:11:04.588Z",
+  "updatedAt": "2026-06-19T13:32:04.394Z",
   "checkoutUrl": "https://pay.hotmart.com/R105871853K",
   "strategy": "both",
   "totalCountries": 20,
@@ -27,8 +27,8 @@
     },
     "AR": {
       "currency": "ARS",
-      "amount": 19752,
-      "formatted": "$ 19.752,00",
+      "amount": 19814,
+      "formatted": "$ 19.814,00",
       "locale": "es_AR",
       "name": "Argentina"
     },
